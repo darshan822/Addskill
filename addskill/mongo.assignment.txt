@@ -1,0 +1,164 @@
+1)Write a query to add users to our database. Username while adding a new user should be unique.
+
+
+solution-> db.User.insert({"firstName":"Dina","lastName":"Yadav","password":"ABNCxTY","calories":2800,"phone":"012365","email":"bhavesh2@gmail.com","username":"bhaveshs"})
+db.User.insert({"firstName":"Dina","lastName":"Yadav","password":"ABNCxTY","calories":2800,"phone":"012365","email":"bhavesh2@gmail.com","username":"bhaveshs1"})
+db.User.insert({"firstName":"mina","lastName":"Yadv","password":"ABNCxTY","calories":2800,"phone":"012365","email":"bhavesh2@gmail.com","username":"bhaveshs2"})
+ db.User.insert({"firstName":"mina","lastName":"Yadv","password":"ABNCxTY","calories":2800,"phone":"012365","email":"bhavesh2@gmail.com","username":"bhaveshs3"})
+
+2)Write a query to delete user from our database based on the username (bhaveshs).
+soln- db.User.remove({"username":"bhaveshs"})
+
+4)Write a query to add a meal for a specific user based on the username (bhaveshs). Meal should have information as described in the meal object above.
+soln-db.Meal.insert({"datetime":"2020-12-20T16:00:00Z","food_name":"maggie","calorie":1310,"description":" sauce pasta","_id":"673","username":"bhaveshs"})
+
+5)Write a query to delete meal based on _id (123).
+soln-db.User.remove({"_id":"123"})
+
+6)Write a query to delete all meals for a specific user as identified by the username (bhaveshs).
+soln-db.Meal.remove({"username":"bheveshs"})
+
+7)Write a query to list all meals for a specific user (bhaveshs).
+
+soln-db.Meal.find({"username":"bhaveshs"})
+	{ "_id" : "673", "datetime" : "2020-12-20T16:00:00Z", "food_name" : "maggie", "calorie" : 1310, "description" : " sauce pasta", "username" : "bhaveshs" }
+
+8)Write a query to list all meals for a specific user (bhaveshs), on a given date (2020-12-20) , ordered by time.
+soln-db.Meal.find({"username":"bhaveshs"}).sort({"datetime":-1})
+
+
+
+
+
+
+USER
+1)bhaveshs	db.Meal.find({"username":"bhaveshs"})===>
+	
+	MEALS												
+														{
+   {
+      "_id":"673",
+      "datetime":"2020-12-20T16:00:00Z",
+      "food_name":"maggie",
+      "calorie":1310,
+      "description":" sauce pasta",
+      "username":"bhaveshs"
+   }{
+      "_id":"6073",
+      "datetime":"2020-12-20T16:00:00Z",
+      "food_name":"sauce",
+      "calorie":1310,
+      "description":" sauce pasta",
+      "username":"bhaveshs"
+   }{
+      "_id":"6043",
+      "datetime":"2020-12-20T16:00:00Z",
+      "food_name":"chicken",
+      "calorie":1310,
+      "description":"chicken sauce pasta",
+      "username":"bhaveshs"
+   }{
+      "_id":"6643",
+      "datetime":"2020-12-20T16:00:00Z",
+      "food_name":"fish",
+      "calorie":1310,
+      "description":"fish sauce pasta",
+      "username":"bhaveshs"
+   }{
+      "_id":"343",
+      "datetime":"2020-12-20T16:00:00Z",
+      "food_name":"chhole",
+      "calorie":10,
+      "description":"maggie sauce pasta",
+      "username":"bhaveshs"
+   }
+}
+
+2)bhaveshs1 	db.Meal.find({"username":"bhaveshs1"})
+
+	Meal
+
+{
+   "_id":173,
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"pasta",
+   "calorie":300,
+   "description":"red sauce pasta",
+   "username":"bhaveshs1"
+}{
+   "_id":1673,
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"maggie",
+   "calorie":1300,
+   "description":" sauce pasta",
+   "username":"bhaveshs1"
+}{
+   "_id":16173,
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chhole bhature",
+   "calorie":13000,
+   "description":" sauce pasta",
+   "username":"bhaveshs1"
+}
+
+3) bhaveshs2		db.Meal.find({"username":"bhaveshs2"})
+
+{
+   "_id":"33073",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken sauce pasta",
+   "username":"bhaveshs2"
+}{
+   "_id":"13273",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken1 sauce pasta",
+   "username":"bhaveshs2"
+}{
+   "_id":"13373",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken1 sauce pasta",
+   "username":"bhaveshs2"
+}
+
+4)bhaveshs3		db.Meal.find("username":"bhaveshs3"})
+
+{goDB Enterprise > db.Meal.find({
+   "username":"bhaveshs3"
+}")"{
+   "_id":"3073",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken1 sauce pasta",
+   "username":"bhaveshs3"
+}{
+   "_id":"373",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken1 sauce pasta",
+   "username":"bhaveshs3"
+}{
+   "_id":"3273",
+   "datetime":"2020-12-20T16:00:00Z",
+   "food_name":"chicken",
+   "calorie":1310,
+   "description":"chicken1 sauce pasta",
+   "username":"bhaveshs3"
+}}
+
+
+
+
+
+
+
+
+
+
